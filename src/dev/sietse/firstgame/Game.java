@@ -9,7 +9,7 @@ import dev.sietse.firstgame.input.KeyManager;
 import dev.sietse.firstgame.states.GameState;
 import dev.sietse.firstgame.states.MenuState;
 import dev.sietse.firstgame.states.State;
-import dev.sietse.world.World;
+import dev.sietse.firstgame.world.World;
 
 public class Game implements Runnable {
 
@@ -66,8 +66,9 @@ public class Game implements Runnable {
 		//Clear screen
 		g.clearRect(0, 0, width, height);
 		//Draw Here!
-		
+		World w = new World();
 		if(State.getState() != null) {
+			w.init(g);
 			State.getState().render(g);
 			}
 		//End Drawing!
@@ -78,7 +79,6 @@ public class Game implements Runnable {
 	public void run() {
 		
 		init();
-		World w = new World();
 		
 		int fps = 60;
 		double timePerUpdate = 1000000000 / fps;
