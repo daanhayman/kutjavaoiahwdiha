@@ -32,6 +32,7 @@ public class World {
 	public void worldgenerate(Graphics g) 
 	{
 		ArrayList arraydata = new ArrayList();
+		ArrayList arraydata2 = new ArrayList();
 		for(int widthf = 0; widthf < width; widthf+=ammount) {
 			for(int heightf = 0; heightf < height; heightf+=ammount) {
 				Functions func = new Functions();
@@ -39,6 +40,13 @@ public class World {
 				arraydata.add(heightf);
 				arraydata.add(widthf);
 				arraydata.add(r);
+				if(r > 4500)
+				{
+					
+					arraydata2.add(widthf);
+					arraydata2.add(heightf);
+					file2(arraydata2, 1);
+				}
 			}
 		}
 		file(arraydata, 1);
@@ -94,6 +102,8 @@ public class World {
 	   if(itype < 5001 && itype > 4500)
 	   {
 		   g.drawImage(Assets.stone1, (int) iwidth, (int) iheight, 64, 64, null);
+
+		   
 	   }
    }
   
@@ -118,6 +128,14 @@ public class World {
    {	    
 	    if(num == 1){
 		    File file = new File("data.txt");	
+		    createfile(file, array);
+	    }
+   }
+   
+   public void file2(ArrayList array, int num)
+   {	    
+	    if(num == 1){
+		    File file = new File("stone.txt");	
 		    createfile(file, array);
 	    }
    }
