@@ -64,7 +64,7 @@ public class World {
 	    	String listtype = myList.get(type);
 	    	int itype = Integer.parseInt(listtype.trim());
 	    	sorttexture(g,iheight,iwidth,itype);
-	    	g.drawImage(Assets.gras1, (int) iwidth, (int) iheight, 64, 64, null);
+	  
 	    	height += 3;
 	    	width += 3;
 	    	type +=3;
@@ -77,23 +77,23 @@ public class World {
    public void sorttexture(Graphics g, int iheight, int iwidth, int itype){
 	   if(itype > 0 && itype < 1001)
 	   {
-		   
+		   g.drawImage(Assets.gras1, (int) iwidth, (int) iheight, 64, 64, null);
 	   }	   
 	   if(itype > 1000 && itype < 2001)
 	   {
-		   
+		   g.drawImage(Assets.gras2, (int) iwidth, (int) iheight, 64, 64, null);
 	   }	   
 	   if(itype > 2000 && itype < 3001)
 	   {
-		   
+		   g.drawImage(Assets.gras3, (int) iwidth, (int) iheight, 64, 64, null);
 	   }
 	   if(itype > 3000 && itype < 4501)
 	   {
-		   
+		   g.drawImage(Assets.gras4, (int) iwidth, (int) iheight, 64, 64, null);
 	   }
 	   if(itype < 5001 && itype > 4500)
 	   {
-		   
+		   g.drawImage(Assets.stone1, (int) iwidth, (int) iheight, 64, 64, null);
 	   }
    }
   

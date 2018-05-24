@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 
 	private static final int width = 32, height = 32;
-	public static BufferedImage player1, player2, player3, player4, gras1;
+	public static BufferedImage player1, player2, player3, player4,stone1, gras1,gras2,gras3,gras4;
 
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
@@ -17,5 +17,9 @@ public class Assets {
 		player4 = sheet.crop(width * 3, 0, width, height);
 		
 		gras1 = tiles.crop(0, 64 * 2, 64, 64);
+		gras2 = tiles.crop(64*1, 64*2, 64, 64);
+		gras3 = tiles.crop(64*4, 64*2, 64, 64);
+		gras4 = tiles.crop(64*6, 64*2, 64, 64);
+		stone1 = tiles.crop(512, 0, 64, 64);
 	}
 }
