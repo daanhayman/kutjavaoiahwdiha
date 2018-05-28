@@ -10,6 +10,7 @@ import dev.sietse.firstgame.states.GameState;
 import dev.sietse.firstgame.states.MenuState;
 import dev.sietse.firstgame.states.State;
 import dev.sietse.firstgame.world.World;
+import dev.sietse.firstgame.world.MenuClass;
 
 public class Game implements Runnable {
 
@@ -27,6 +28,15 @@ public class Game implements Runnable {
 	private State gamestate;
 	private State menustate;
 	
+	private String strGamestate = "";
+	
+//	public String getstrGamestate() {
+//		return this.strGamestate;
+//	}
+//	public void setstrGamestate(String value) {
+//		this.strGamestate = "Done";
+//	}
+	
 	//Input
 	private KeyManager keyManager;
 	
@@ -42,9 +52,16 @@ public class Game implements Runnable {
 		display.getJframe().addKeyListener(keyManager);
 		Assets.init();
 		
+		
+		
+		//menu
 		gamestate = new GameState(this);
-		menustate = new MenuState(this);
+
+		//if() {
 		State.setState(gamestate);
+		//}else {
+		//	State.setState(menustate);
+		//}
 	}
 	
 	
@@ -57,6 +74,7 @@ public class Game implements Runnable {
 	}
 	
 	private void render() {
+		
 		bs = display.getCanvas().getBufferStrategy();
 		if(bs == null) {
 			display.getCanvas().createBufferStrategy(3);
@@ -68,14 +86,27 @@ public class Game implements Runnable {
 		//Draw Here!
 		World w = new World();
 		if(State.getState() != null) {
-			w.init(g);
-			State.getState().render(g);
+			if(this.strGamestate == "")
+			{
+				MenuState menu = new MenuState(this);
+				String strReturn = menu.menuRender(g);
+				if(strReturn == "true")
+				{
+					this.strGamestate = "true";	
+				} 
 			}
+			else
+			{
+				w.init(g);
+				State.getState().render(g);	 
+			}
+			
+		}
+		
 		//End Drawing!
 		bs.show();
 		g.dispose();
 	}
-	
 	public void run() {
 		
 		init();

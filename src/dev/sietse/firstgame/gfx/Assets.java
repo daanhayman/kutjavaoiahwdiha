@@ -11,15 +11,18 @@ public class Assets {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
 		SpriteSheet tiles = new SpriteSheet(ImageLoader.loadImage("/textures/tiles.png"));
 		
+		
 		player1 = sheet.crop(0, 0, width, height);
 		player2 = sheet.crop(width, 0, width, height);
 		player3 = sheet.crop(width * 2, 0, width, height);
 		player4 = sheet.crop(width * 3, 0, width, height);
+		
 		
 		gras1 = tiles.crop(0, 64 * 2, 64, 64);
 		gras2 = tiles.crop(64*1, 64*2, 64, 64);
 		gras3 = tiles.crop(64*4, 64*2, 64, 64);
 		gras4 = tiles.crop(64*6, 64*2, 64, 64);
 		stone1 = tiles.crop(512, 0, 64, 64);
+		
 	}
 }
