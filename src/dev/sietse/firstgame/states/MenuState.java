@@ -25,6 +25,13 @@ private Game game;
 		}
 	  return "false";
 	}
+	
+	public String menuescUpdate() {	
+		if(game.getKeyManager().esc) {
+			return "true";
+		}
+	  return "false";
+	}
 
 	public String menuRender(Graphics g) {
 		String strReturn = this.menuUpdate();
@@ -37,6 +44,12 @@ private Game game;
 		g.setFont(fnt0);
 		g.drawString("Monster Defender", 665, 450);
 		g.drawImage(ImageLoader.loadImage("/textures/start.png"), 560, 450, 800 , 220, null);
+		return strReturn;
+		
+	}
+	
+	public String menuEsc() {
+		String strReturn = this.menuescUpdate();
 		return strReturn;
 	}
 }

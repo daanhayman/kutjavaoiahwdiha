@@ -88,6 +88,7 @@ public class Game implements Runnable {
 		if(State.getState() != null) {
 			if(this.strGamestate == "")
 			{
+				w.init(g);
 				MenuState menu = new MenuState(this);
 				String strReturn = menu.menuRender(g);
 				if(strReturn == "true")
@@ -97,6 +98,12 @@ public class Game implements Runnable {
 			}
 			else
 			{
+				MenuState menu = new MenuState(this);
+				String strReturn = menu.menuEsc();
+				if(strReturn =="true")
+				{
+					this.strGamestate = "";
+				}
 				w.init(g);
 				State.getState().render(g);	 
 			}
