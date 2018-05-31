@@ -10,7 +10,7 @@ import dev.sietse.firstgame.states.GameState;
 import dev.sietse.firstgame.states.MenuState;
 import dev.sietse.firstgame.states.State;
 import dev.sietse.firstgame.world.World;
-import dev.sietse.firstgame.world.MenuClass;
+//import dev.sietse.firstgame.world.MenuClass;
 
 public class Game implements Runnable {
 
