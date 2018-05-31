@@ -102,8 +102,7 @@ public class World {
 	   if(itype < 5001 && itype > 4900)
 	   {
 		   g.drawImage(Assets.stone1, (int) iwidth, (int) iheight, 64, 64, null);
-
-		   
+		   g.drawImage(Assets.teleporter1, (int) iwidth, (int) iheight, 64, 64, null);
 	   }
    }
   

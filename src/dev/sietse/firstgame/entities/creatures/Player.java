@@ -69,8 +69,7 @@ public class Player extends Creature{
 		int stonewidth = 0;
 		
 		int stoneheight = 1;
-		
-		List<String> myList = this.data;
+
 		
 		for(int f = 0; f<=this.count; f++)
 		{
@@ -86,13 +85,13 @@ public class Player extends Creature{
 			float intMaxWidthplayer = x + 64;
 			
 			
-			if(x > strstonePosWidth && x < stonePosWidthMax)
+			if(x > strstonePosWidth && x < stonePosWidthMax || intMaxWidthplayer > strstonePosWidth && intMaxWidthplayer < stonePosWidthMax)
 			{
 				if(y > strstonePosHeight && y < stonePosHeightmax)
 				{
 					x += 200;
 					y += 200;
-
+					return;
 				}	
 			}
 			
