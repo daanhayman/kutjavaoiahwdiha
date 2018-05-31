@@ -21,7 +21,7 @@ public class Player extends Creature{
 		super(x,y);
 		this.game = game;
 		this.data = getData("stone.txt");
-		this.count = this.data.size() / 2;
+		this.count = (this.data.size() / 2) - 1;
 		System.out.println(this.count);
 	}
 	
@@ -74,19 +74,32 @@ public class Player extends Creature{
 		
 		for(int f = 0; f<=this.count; f++)
 		{
+			//links boven
 			float strstonePosWidth = Integer.parseInt(this.data.get(stonewidth).replaceAll("\\s+",""));
 			float strstonePosHeight = Integer.parseInt(this.data.get(stoneheight).replaceAll("\\s+",""));
+			
+			//rechts onder
 			float stonePosWidthMax = strstonePosWidth + 64;
-			float stonePosWidthHeight = strstonePosHeight + 64;
-			float intMaxHeightplayer = y + 30;
-			float intMaxWidthplayer = x + 20;
+			float stonePosHeightmax = strstonePosHeight + 64;
+			
+			float intMaxHeightplayer = y + 40;
+			float intMaxWidthplayer = x + 64;
 			
 			
 			if(x > strstonePosWidth && x < stonePosWidthMax)
 			{
-				
-				return;
+				if(y > strstonePosHeight && y < stonePosHeightmax)
+				{
+					x += 200;
+					y += 200;
+
+				}	
 			}
+			
+			stonewidth++;
+			stonewidth++;
+			stoneheight++;
+			stoneheight++;
 		}
 		if(game.getKeyManager().up)
 			y -= 3;

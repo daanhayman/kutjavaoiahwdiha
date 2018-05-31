@@ -40,7 +40,7 @@ public class World {
 				arraydata.add(heightf);
 				arraydata.add(widthf);
 				arraydata.add(r);
-				if(r > 4500)
+				if(r > 4900)
 				{
 					
 					arraydata2.add(widthf);
@@ -83,7 +83,7 @@ public class World {
  //g.drawImage(Assets.gras1, (int) iwidth, (int) iheight, 64, 64, null);
    
    public void sorttexture(Graphics g, int iheight, int iwidth, int itype){
-	   if(itype > 0 && itype < 1001)
+	   if(itype > 0 && itype < 1001 || itype < 5001 && itype > 4900)
 	   {
 		   g.drawImage(Assets.gras1, (int) iwidth, (int) iheight, 64, 64, null);
 	   }	   
@@ -95,11 +95,11 @@ public class World {
 	   {
 		   g.drawImage(Assets.gras3, (int) iwidth, (int) iheight, 64, 64, null);
 	   }
-	   if(itype > 3000 && itype < 4501)
+	   if(itype > 3000 && itype < 4900)
 	   {
 		   g.drawImage(Assets.gras4, (int) iwidth, (int) iheight, 64, 64, null);
 	   }
-	   if(itype < 5001 && itype > 4500)
+	   if(itype < 5001 && itype > 4900)
 	   {
 		   g.drawImage(Assets.stone1, (int) iwidth, (int) iheight, 64, 64, null);
 
